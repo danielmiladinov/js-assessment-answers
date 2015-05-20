@@ -11,7 +11,7 @@ exports.arraysAnswers = {
   },
 
   remove : function(arr, item) {
-
+    return arr.filter(function (i) { return i !== item; });
   },
 
   removeWithoutCopy : function(arr, item) {
