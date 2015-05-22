@@ -25,7 +25,7 @@ exports.arraysAnswers = {
   },
 
   append : function(arr, item) {
-
+    return arr.concat(item);
   },
 
   truncate : function(arr) {
