@@ -29,7 +29,8 @@ exports.arraysAnswers = {
   },
 
   truncate : function(arr) {
-
+    arr.splice(-1, 1);
+    return arr;
   },
 
   prepend : function(arr, item) {
