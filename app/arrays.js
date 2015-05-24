@@ -34,7 +34,7 @@ exports.arraysAnswers = {
   },
 
   prepend : function(arr, item) {
-
+    return [].concat(item, arr);
   },
 
   curtail : function(arr) {
