@@ -38,7 +38,8 @@ exports.arraysAnswers = {
   },
 
   curtail : function(arr) {
-
+    arr.splice(0, 1);
+    return arr;
   },
 
   concat : function(arr1, arr2) {
