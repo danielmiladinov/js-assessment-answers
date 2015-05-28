@@ -52,7 +52,7 @@ exports.arraysAnswers = {
   },
 
   count : function(arr, item) {
-
+    return arr.reduce(function (count, v) { if (v === item) { count += 1; } return count; }, 0);
   },
 
   duplicates : function(arr) {
