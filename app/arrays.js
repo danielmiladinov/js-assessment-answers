@@ -56,7 +56,26 @@ exports.arraysAnswers = {
   },
 
   duplicates : function(arr) {
+    var dupes = arr.reduce(function (dupes, v) {
+      if (!dupes.hasOwnProperty(v)) {
+        dupes[v] = 0;
+      }
+      dupes[v]++;
+      return dupes;
+    }, {});
 
+    var pairs = [];
+    for (var d in dupes) {
+      if (dupes.hasOwnProperty(d)) {
+        pairs.push([d, dupes[d]]);
+      }
+    }
+
+    return pairs.filter(function (pair) {
+      return pair[1] > 1;
+    }).map(function (pair) {
+      return pair[0];
+    });
   },
 
   square : function(arr) {
