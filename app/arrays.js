@@ -83,6 +83,11 @@ exports.arraysAnswers = {
   },
 
   findAllOccurrences : function(arr, target) {
-
+    return arr.reduce(function (occ, v, i) {
+      if (v === target) {
+        occ.push(i);
+      }
+      return occ;
+    }, []);
   }
 };
