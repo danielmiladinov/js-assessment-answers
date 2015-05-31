@@ -79,7 +79,7 @@ exports.arraysAnswers = {
   },
 
   square : function(arr) {
-
+    return arr.map(function (v) { return v * v; });
   },
 
   findAllOccurrences : function(arr, target) {
