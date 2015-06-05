@@ -6,7 +6,7 @@ exports.functionsAnswers = {
   },
 
   speak : function(fn, obj) {
-
+    return fn.apply(obj, arguments);
   },
 
   functionFunction : function(str) {
