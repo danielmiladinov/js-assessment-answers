@@ -20,7 +20,9 @@ exports.functionsAnswers = {
   },
 
   partial : function(fn, str1, str2) {
-
+    return function (punct) {
+      return fn.call(this, str1, str2, punct);
+    }
   },
 
   useArguments : function() {
