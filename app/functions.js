@@ -26,7 +26,7 @@ exports.functionsAnswers = {
   },
 
   useArguments : function() {
-
+    return [].slice.apply(arguments).reduce(function (x, y) { return x + y }, 0);
   },
 
   callIt : function(fn) {
