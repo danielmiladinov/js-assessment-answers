@@ -30,7 +30,8 @@ exports.functionsAnswers = {
   },
 
   callIt : function(fn) {
-
+    var args = [].slice.call(arguments, 1, arguments.length);
+    return fn.apply(this, args);
   },
 
   partialUsingArguments : function(fn) {
