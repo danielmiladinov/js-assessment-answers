@@ -35,7 +35,11 @@ exports.functionsAnswers = {
   },
 
   partialUsingArguments : function(fn) {
+    var firstArgs = [].slice.call(arguments, 1, arguments.length);
 
+    return function () {
+      return fn.apply(this, firstArgs.concat([].slice.call(arguments)));
+    }
   },
 
   curryIt : function(fn) {
