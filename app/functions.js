@@ -43,6 +43,20 @@ exports.functionsAnswers = {
   },
 
   curryIt : function(fn) {
+    var args = [];
 
+    var curried = function (x) {
+      args.push(x);
+      var result = curried;
+
+      if (args.length === fn.length) {
+        result = fn.apply(this, args);
+        args = [];
+      }
+
+      return result;
+    };
+
+    return curried;
   }
 };
