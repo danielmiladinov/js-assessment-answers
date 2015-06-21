@@ -21,7 +21,16 @@ exports.recursionAnswers = {
   },
 
   permute: function(arr) {
+    var concat = function (x, y) { return x.concat(y); };
 
+    return arr.map(function (v, i, a) {
+      var prefix = [v], remainder = a.filter(function (v, idx) { return i !== idx; });
+      return (
+        (remainder.length > 1) ?
+        exports.recursionAnswers.permute(remainder) :
+        remainder
+      ).map(concat.bind(undefined, prefix));
+    }).reduce(concat);
   },
 
   fibonacci: function(n) {
