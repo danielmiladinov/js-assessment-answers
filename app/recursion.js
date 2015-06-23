@@ -34,7 +34,20 @@ exports.recursionAnswers = {
   },
 
   fibonacci: function(n) {
+    var iterate = function (fn, seed, times) {
+      if (times > 0) {
+        return iterate(fn, fn(seed), times - 1);
+      }
 
+      return seed;
+    };
+
+    var fib = function (fibPair) {
+      var a = fibPair[0], b = fibPair[1];
+      return [b, a + b];
+    };
+
+    return iterate(fib, [0, 1], n)[0];
   },
 
   validParentheses: function(n) {
